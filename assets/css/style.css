@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Uriel N. Galace — personal academic website
+   One stylesheet for every page. Colors live in the :root variables below;
+   dark mode is automatic (follows the visitor's system setting).
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --bg-card: #f7f8fa;
+  --text: #1d1d1f;
+  --muted: #5c6470;
+  --accent: #012169;        /* Duke navy */
+  --link: #0e5aa7;
+  --border: #e3e6ea;
+  --pill-bg: #f0f3f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --bg-card: #1d2026;
+    --text: #e9eaec;
+    --muted: #a0a7b1;
+    --accent: #9db8e8;
+    --link: #8ab4f8;
+    --border: #2c3037;
+    --pill-bg: #21252c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, .site-name {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- Header & navigation ------------------------------------------------ */
+
+header {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.2rem 1.25rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+}
+
+.site-name {
+  font-size: 1.35rem;
+  color: var(--text);
+}
+.site-name:hover { text-decoration: none; color: var(--accent); }
+
+nav { display: flex; flex-wrap: wrap; gap: 1.1rem; padding-bottom: 0.35rem; }
+
+nav a { color: var(--muted); font-size: 0.97rem; padding-bottom: 0.3rem; }
+nav a:hover { color: var(--text); text-decoration: none; }
+nav a.active {
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  font-weight: 600;
+}
+
+/* ---- Layout ------------------------------------------------------------- */
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.2rem 1.25rem 3rem;
+}
+
+h1 { font-size: 1.75rem; margin: 0 0 1.2rem; }
+
+h2 {
+  font-size: 0.95rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+  margin: 2.6rem 0 1.1rem;
+}
+
+h3 { font-size: 1.15rem; margin: 1.6rem 0 0.25rem; }
+
+footer {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.4rem 1.25rem 2.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* ---- About page --------------------------------------------------------- */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 0 2.5rem;
+  align-items: start;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.lede { font-size: 1.02rem; }
+.lede p:first-child { margin-top: 0; }
+
+.role {
+  color: var(--muted);
+  margin: -0.6rem 0 1.4rem;
+  font-size: 1.02rem;
+}
+
+/* Interest chips */
+.chips { list-style: none; padding: 0; margin: 0.6rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chips li {
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.22rem 0.8rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* Contact buttons */
+.contact-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
+.contact-links a {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.32rem 1rem;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--pill-bg);
+}
+.contact-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* News list */
+.news { list-style: none; padding: 0; margin: 0; }
+.news li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  padding: 0.45rem 0;
+}
+.news .date { color: var(--muted); font-size: 0.92rem; white-space: nowrap; }
+
+/* ---- Research page ------------------------------------------------------ */
+
+.pub { margin-bottom: 1.9rem; }
+.pub h3 { margin-bottom: 0.3rem; }
+.pub .meta { color: var(--muted); font-size: 0.93rem; margin: 0 0 0.5rem; }
+.pub .meta .status { color: var(--accent); font-weight: 600; }
+
+details.abstract {
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+details.abstract summary {
+  cursor: pointer;
+  color: var(--link);
+  font-size: 0.93rem;
+  user-select: none;
+}
+details.abstract p { color: var(--muted); font-size: 0.95rem; }
+
+/* ---- Projects page ------------------------------------------------------ */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.1rem;
+}
+.card h3 { margin-top: 0.2rem; }
+.card .meta { color: var(--muted); font-size: 0.92rem; margin: 0 0 0.5rem; }
+.card p:last-child { margin-bottom: 0.3rem; }
+
+/* ---- Teaching page ------------------------------------------------------ */
+
+.teach { margin-bottom: 1.6rem; }
+.teach .meta { color: var(--muted); font-size: 0.93rem; margin: 0.1rem 0 0.5rem; }
+.teach ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+.teach li { margin-bottom: 0.25rem; }
+
+/* ---- CV page ------------------------------------------------------------ */
+
+.btn-primary {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.55rem 1.3rem;
+  font-weight: 600;
+}
+.btn-primary:hover { text-decoration: none; opacity: 0.92; }
+@media (prefers-color-scheme: dark) {
+  .btn-primary { color: #14161a; }
+}
+
+.cv-frame {
+  width: 100%;
+  height: 78vh;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-top: 1.4rem;
+}
+
+/* ---- Small screens ------------------------------------------------------ */
+
+@media (max-width: 700px) {
+  .profile-grid { grid-template-columns: 1fr; }
+  .profile-grid .photo { order: -1; margin-bottom: 1.4rem; text-align: center; }
+  .avatar { width: 160px; height: 160px; }
+  .news li { grid-template-columns: 1fr; gap: 0; }
+  header { padding-top: 1.6rem; }
+}
