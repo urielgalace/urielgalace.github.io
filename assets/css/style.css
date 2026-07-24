@@ -126,6 +126,9 @@ footer {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  /* Portrait source is 2:3; anchor the square crop to the top so the head is
+     fully inside the circle instead of being cut off at the hairline. */
+  object-position: center top;
   border-radius: 50%;
   border: 1px solid var(--border);
 }
