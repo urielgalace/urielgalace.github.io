@@ -1,4 +1,4 @@
-# Personal academic website — Uriel N. Galace
+# Personal academic website - Uriel N. Galace
 
 A dependency-free static website (plain HTML + CSS, no build step) for GitHub Pages.
 Five pages: About (landing), Research, Projects, Teaching, CV.
