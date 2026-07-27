@@ -123,13 +123,11 @@ footer {
 }
 
 .avatar {
+  /* Show the portrait in full (no cropping): fixed width, natural height. */
   width: 200px;
-  height: 200px;
-  object-fit: cover;
-  /* Portrait source is 2:3; anchor the square crop to the top so the head is
-     fully inside the circle instead of being cut off at the hairline. */
-  object-position: center top;
-  border-radius: 50%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
   border: 1px solid var(--border);
 }
 
@@ -215,6 +213,18 @@ details.abstract p { color: var(--muted); font-size: 0.95rem; }
 .teach ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
 .teach li { margin-bottom: 0.25rem; }
 
+/* ---- Certifications page ------------------------------------------------ */
+
+.certs { list-style: none; padding: 0; margin: 0; }
+.certs li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.certs li:last-child { border-bottom: none; }
+.cert-name { display: block; font-weight: 600; }
+.cert-meta { display: block; color: var(--muted); font-size: 0.92rem; margin-top: 0.1rem; }
+.certs a { display: inline-block; font-size: 0.9rem; margin-top: 0.25rem; }
+
 /* ---- CV page ------------------------------------------------------------ */
 
 .btn-primary {
@@ -243,7 +253,7 @@ details.abstract p { color: var(--muted); font-size: 0.95rem; }
 @media (max-width: 700px) {
   .profile-grid { grid-template-columns: 1fr; }
   .profile-grid .photo { order: -1; margin-bottom: 1.4rem; text-align: center; }
-  .avatar { width: 160px; height: 160px; }
+  .avatar { width: 170px; height: auto; margin: 0 auto; }
   .news li { grid-template-columns: 1fr; gap: 0; }
   header { padding-top: 1.6rem; }
 }
