@@ -123,11 +123,13 @@ footer {
 }
 
 .avatar {
-  /* Show the portrait in full (no cropping): fixed width, natural height. */
   width: 200px;
-  height: auto;
-  display: block;
-  border-radius: 6px;
+  height: 200px;
+  object-fit: cover;
+  /* The 2:3 portrait has its hairline 5.3% down. Anchoring the crop at 12%
+     leaves only a few pixels between the top of the hair and the circle. */
+  object-position: center 12%;
+  border-radius: 50%;
   border: 1px solid var(--border);
 }
 
@@ -253,7 +255,7 @@ details.abstract p { color: var(--muted); font-size: 0.95rem; }
 @media (max-width: 700px) {
   .profile-grid { grid-template-columns: 1fr; }
   .profile-grid .photo { order: -1; margin-bottom: 1.4rem; text-align: center; }
-  .avatar { width: 170px; height: auto; margin: 0 auto; }
+  .avatar { width: 170px; height: 170px; margin: 0 auto; }
   .news li { grid-template-columns: 1fr; gap: 0; }
   header { padding-top: 1.6rem; }
 }
