@@ -2,7 +2,7 @@
 
 A dependency-free static website (plain HTML + CSS, no build step) served by GitHub Pages
 at <https://urielgalace.github.io>. Five pages: About (landing), Research, Projects,
-Teaching, CV.
+Teaching, Certifications, CV.
 
 ## How it deploys
 
