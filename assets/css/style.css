@@ -208,6 +208,27 @@ details.abstract p { color: var(--muted); font-size: 0.95rem; }
 .card .meta { color: var(--muted); font-size: 0.92rem; margin: 0 0 0.5rem; }
 .card p:last-child { margin-bottom: 0.3rem; }
 
+.map-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  /* Sits between the card heading and its paragraph, so it is capped well
+     short of the text column to stay a supporting figure, not the headline. */
+  max-width: 440px;
+  margin: 0.7rem 0 1.1rem;
+}
+.map-pair a { display: block; }
+.map-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* The maps are drawn on an opaque white canvas, so they keep a light
+     background in dark mode; the border stops them floating on the page. */
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
 /* ---- Teaching page ------------------------------------------------------ */
 
 .teach { margin-bottom: 1.6rem; }
@@ -256,6 +277,9 @@ details.abstract p { color: var(--muted); font-size: 0.95rem; }
   .profile-grid { grid-template-columns: 1fr; }
   .profile-grid .photo { order: -1; margin-bottom: 1.4rem; text-align: center; }
   .avatar { width: 170px; height: 170px; margin: 0 auto; }
+  /* Stacked, a single map would otherwise render wider than it does in the
+     two-up desktop layout, so cap it well below the container width. */
+  .map-pair { grid-template-columns: 1fr; max-width: 260px; }
   .news li { grid-template-columns: 1fr; gap: 0; }
   header { padding-top: 1.6rem; }
 }
