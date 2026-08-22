@@ -248,6 +248,46 @@ details.abstract p { color: var(--muted); font-size: 0.95rem; }
 .cert-meta { display: block; color: var(--muted); font-size: 0.92rem; margin-top: 0.1rem; }
 .certs a { display: inline-block; font-size: 0.9rem; margin-top: 0.25rem; }
 
+.cert-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin: 1.4rem 0 2.2rem;
+}
+.cert-hero {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem 1.2rem;
+}
+.cert-hero-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.cert-hero-name {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.32;
+  margin-bottom: 0.25rem;
+}
+.cert-hero-meta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+}
+.cert-hero-desc { font-size: 0.92rem; margin: 0 0 0.95rem; }
+/* Pushes the link to the card foot so both cards align regardless of text length. */
+.cert-hero a { font-size: 0.9rem; margin-top: auto; align-self: flex-start; }
+
 /* ---- CV page ------------------------------------------------------------ */
 
 .btn-primary {
@@ -280,6 +320,7 @@ details.abstract p { color: var(--muted); font-size: 0.95rem; }
   /* Stacked, a single map would otherwise render wider than it does in the
      two-up desktop layout, so cap it well below the container width. */
   .map-pair { grid-template-columns: 1fr; max-width: 260px; }
+  .cert-featured { grid-template-columns: 1fr; gap: 0.9rem; }
   .news li { grid-template-columns: 1fr; gap: 0; }
   header { padding-top: 1.6rem; }
 }
