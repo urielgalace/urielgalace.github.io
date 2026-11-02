@@ -50,22 +50,25 @@
   <div class="card">
     <h3>Satellite-Based Poverty and Income Mapping for the Philippines</h3>
     <div class="map-pair">
-      <a href="assets/img/income-map-2026.png" target="_blank" rel="noopener">
-        <img src="assets/img/income-map-2026.png" width="1200" height="1671" loading="lazy"
-             alt="Choropleth map of the Philippines showing predicted average barangay household income for 2026, from roughly 106,000 to 1,098,000 pesos per year.">
+      <a href="assets/img/income-map-2025.png" target="_blank" rel="noopener">
+        <img src="assets/img/income-map-2025.png" width="1200" height="1671" loading="lazy"
+             alt="Choropleth map of the Philippines showing estimated average monthly barangay household income for 2025, from roughly 9,600 to 85,900 pesos.">
       </a>
-      <a href="assets/img/poverty-map-2026.png" target="_blank" rel="noopener">
-        <img src="assets/img/poverty-map-2026.png" width="1200" height="1671" loading="lazy"
-             alt="Choropleth map of the Philippines showing predicted barangay poverty incidence for 2026, from near zero to 100 percent.">
+      <a href="assets/img/poverty-map-2025.png" target="_blank" rel="noopener">
+        <img src="assets/img/poverty-map-2025.png" width="1200" height="1671" loading="lazy"
+             alt="Choropleth map of the Philippines showing estimated barangay poverty incidence for 2025, from near zero to about 79 percent.">
       </a>
     </div>
-    <p>I trained a machine learning algorithm using satellite imagery and official
-    government data to estimate the household income and poverty incidence for all
-    42,000 barangays in the Philippines for 2026, extending municipal-level statistics
-    one administrative level down. It combines nighttime lights, satellite embeddings,
-    building footprints, and land cover features in gradient-boosted models trained on
-    PSA statistics, validated with spatial block cross-validation, and benchmarked to
-    official city and municipal data.</p>
+    <p>I trained machine learning models using satellite imagery, census data, official
+    government statistics, and door-to-door household surveys to estimate household income
+    and poverty incidence for all 42,000 barangays in the Philippines for 2025, extending
+    official statistics below the levels at which they are published. The models combine
+    nighttime lights, satellite embeddings, building data, land cover, terrain, and census
+    features. Household income is estimated with a blend of gradient boosting and ridge
+    regression trained on PSA statistics for provinces and cities, and poverty with gradient
+    boosting trained on surveys covering 6,618 barangays. The models were validated on
+    held-out provinces and survey reports, and the estimates were benchmarked to official
+    regional and provincial figures and the PSA&rsquo;s 2023 municipal small-area estimates.</p>
   </div>
 </main>
 
